@@ -1,0 +1,56 @@
+{% extends 'layouts/base_sections.html' %}
+{% load static %}
+
+{% block title %} Rent car {% endblock title %}
+
+{% block body %} class="index-page bg-gray-200" {% endblock body %}
+
+{% block content %}
+
+<header class="bg-gradient-light">
+  <div class="page-header min-vh-75" style="background-image: url('{% static "img/blog7-2.jpg" %}');">
+  <div class="col-5 mx-auto my-auto">
+
+    <h1>Book {{ car }}</h1>
+    {% if messages %}
+    <div id="message-container">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <form method="post" class="form_text">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Rent</button>
+    </form>
+
+  </div>
+  <span class="mask bg-gradient-info opacity-2"></span>
+  </div>
+</header>
+
+{% endblock content %}
+
+{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    const messageContainer = document.getElementById('message-container');
+    if (messageContainer) {
+      Swal.fire({
+        title: 'Success!',
+        text: messageContainer.innerText.trim(),
+        icon: 'success',
+        timer: 3000,
+        timerProgressBar: true,
+        didClose: () => {
+          window.location.href = '{% url "taxi:index" %}';
+        }
+      });
+    }
+  });
+</script>
+{% endblock javascripts %}
