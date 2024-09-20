@@ -32,7 +32,7 @@ class Car(models.Model):
     image = models.ImageField(upload_to='cars/', blank=True, null=True)
     price_per_day = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     model = models.CharField(max_length=255)
-    manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
+    manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name="manufacturer")
     drivers = models.ManyToManyField(Driver, related_name="cars")
 
     def __str__(self):

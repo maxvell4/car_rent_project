@@ -1,22 +1,24 @@
 from django.contrib import messages
-from django.core.paginator import Paginator
-from django.shortcuts import get_object_or_404
-from .models import Driver, Car, Manufacturer
-from django.shortcuts import render, redirect
+from django.http import HttpRequest, HttpResponse
+from django.contrib.auth import logout
 from django.contrib.auth.views import (LoginView,
-                                       PasswordResetView,
-                                       PasswordChangeView,
-                                       PasswordResetConfirmView)
+                                        PasswordResetView,
+                                        PasswordChangeView,
+                                        PasswordResetConfirmView)
+from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404, render, redirect
+
+
+from .models import Driver, Car, Manufacturer
 from taxi.forms import (RegistrationForm,
                         UserLoginForm,
                         UserPasswordResetForm,
                         UserSetPasswordForm,
                         UserPasswordChangeForm,
                         BookingForm)
-from django.contrib.auth import logout
 
 
-def index(request):
+def index(request: HttpRequest) -> HttpResponse:
     """View function for the home page of the site."""
 
     num_drivers = Driver.objects.count()
@@ -41,15 +43,15 @@ def index(request):
     return render(request, "pages/index.html", context=context)
 
 
-def about_us(request):
+def about_us(request: HttpRequest) -> HttpResponse:
     return render(request, 'pages/about-us.html')
 
 
-def contact_us(request):
+def contact_us(request: HttpRequest) -> HttpResponse:
     return render(request, 'pages/contact-us.html')
 
 
-def rent_car(request, car_id):
+def rent_car(request: HttpRequest, car_id: int) -> HttpResponse:
     car = get_object_or_404(Car, id=car_id)
 
     if request.method == 'POST':
@@ -66,19 +68,19 @@ def rent_car(request, car_id):
     return render(request, 'taxi/car_rent.html', {'form': form, 'car': car})
 
 
-def car_photo(request, car_id):
+def car_photo(request: HttpRequest, car_id: int) -> HttpResponse:
     car = get_object_or_404(Car, id=car_id)
     inside_images = car.inside_images.all()
     return render(request, 'taxi/car_detail.html', {'car': car, 'inside_images': inside_images})
 
 
-def success(request):
+def success(request: HttpRequest) -> HttpResponse:
     return render(request, 'pages/index.html')
 
 
 # Authentication
 
-def register(request):
+def register(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -99,7 +101,7 @@ class UserLoginView(LoginView):
     form_class = UserLoginForm
 
 
-def logout_view(request):
+def logout_view(request: HttpRequest) -> HttpResponse:
     logout(request)
     return redirect('/accounts/login')
 

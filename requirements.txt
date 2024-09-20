@@ -7,3 +7,4 @@ django-debug-toolbar==3.2.4
 django-crispy-forms==1.14.0
 crispy-bootstrap4
 pillow
+python-dotenv~=1.0.1
