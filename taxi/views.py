@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render, redirect
 
 
-from .models import Driver, Car, Manufacturer
+from taxi.models import Driver, Car, Manufacturer
 from taxi.forms import (RegistrationForm,
                         UserLoginForm,
                         UserPasswordResetForm,
