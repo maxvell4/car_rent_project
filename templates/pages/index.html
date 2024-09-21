@@ -80,14 +80,14 @@
         {% if car.image %}
         <div class="col">
           <div class="card shadow-sm anime">
-            <a href="{% url 'taxi:car_detail' car.id %}">
+            <a href="{% url 'rent:car_detail' car.id %}">
             <img src="{{ car.image.url }}" class="card-img-top" alt="{{ car.model }}">
             </a>
             <div class="card-body">
               <p class="card-text">{{ car.model }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="{% url 'taxi:rent_car' car.id %}" class="btn btn-sm btn-outline-secondary">Rent now</a>
+                  <a href="{% url 'rent:rent_car' car.id %}" class="btn btn-sm btn-outline-secondary">Rent now</a>
                 </div>
                 <small class="text-body-secondary">{{ car.price_per_day }} USD/per day</small>
               </div>

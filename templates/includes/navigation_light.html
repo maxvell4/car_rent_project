@@ -45,13 +45,13 @@
               <a href="/" class="dropdown-item border-radius-md">
                 <span class="ps-3">Presentation</span>
               </a>
-              <a href="{% url 'taxi:about-us' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:about-us' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">About Us</span>
               </a>
-              <a href="{% url 'taxi:contact-us' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:contact-us' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Contact Us</span>
               </a>
-              <a href="{% url 'taxi:author' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:author' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Author</span>
               </a>
               <div class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center px-0 mt-3">
@@ -75,17 +75,17 @@
                 Account
               </div>
               {% if request.user.is_authenticated %}
-              <a href="{% url 'taxi:password_change' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:password_change' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Change Password</span>
               </a>
-              <a href="{% url 'taxi:logout' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:logout' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Logout</span>
               </a>
               {% else %}
-              <a href="{% url 'taxi:login' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:login' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Sign In</span>
               </a>
-              <a href="{% url 'taxi:register' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:register' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Sign Up</span>
               </a>
               {% endif %}
@@ -114,13 +114,13 @@
               <a href="/" class="dropdown-item border-radius-md">
                 <span class="ps-3">Presentation</span>
               </a>
-              <a href="{% url 'taxi:about-us' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:about-us' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">About Us</span>
               </a>
-              <a href="{% url 'taxi:contact-us' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:contact-us' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Contact Us</span>
               </a>
-              <a href="{% url 'taxi:author' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:author' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Author</span>
               </a>
               <div class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center px-0 mt-3">
@@ -144,17 +144,17 @@
                 Account
               </div>
               {% if request.user.is_authenticated %}
-              <a href="{% url 'taxi:password_change' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:password_change' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Change Password</span>
               </a>
-              <a href="{% url 'taxi:logout' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:logout' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Logout</span>
               </a>
               {% else %}
-              <a href="{% url 'taxi:login' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:login' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Sign In</span>
               </a>
-              <a href="{% url 'taxi:register' %}" class="dropdown-item border-radius-md">
+              <a href="{% url 'rent:register' %}" class="dropdown-item border-radius-md">
                 <span class="ps-3">Sign Up</span>
               </a>
               {% endif %}
@@ -169,7 +169,7 @@
           <ul class="dropdown-menu dropdown-menu-animation dropdown-lg dropdown-lg-responsive p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuBlocks">
             <div class="d-none d-lg-block">
               <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'taxi:presentation' %}">
+                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'rent:presentation' %}">
                   <div class="d-flex">
                     <div class="icon h-10 me-3 d-flex mt-1">
                       <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
@@ -184,16 +184,16 @@
                   </div>
                 </a>
                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:page_header' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:page_header' %}">
                     Page Headers
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:features' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:features' %}">
                     Features
                   </a>
                 </div>
               </li>
               <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'taxi:presentation' %}">
+                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'rent:presentation' %}">
                   <div class="d-flex">
                     <div class="icon h-10 me-3 d-flex mt-1">
                       <i class="ni ni-laptop text-gradient text-primary"></i>
@@ -208,19 +208,19 @@
                   </div>
                 </a>
                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:navbars' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:navbars' %}">
                     Navbars
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:nav_tabs' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:nav_tabs' %}">
                     Nav Tabs
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:pagination' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:pagination' %}">
                     Pagination
                   </a>
                 </div>
               </li>
               <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'taxi:presentation' %}">
+                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'rent:presentation' %}">
                   <div class="d-flex">
                     <div class="icon h-10 me-3 d-flex mt-1">
                       <i class="ni ni-badge text-gradient text-primary"></i>
@@ -235,16 +235,16 @@
                   </div>
                 </a>
                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:inputs' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:inputs' %}">
                     Inputs
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:forms' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:forms' %}">
                     Forms
                   </a>
                 </div>
               </li>
               <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'taxi:presentation' %}">
+                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'rent:presentation' %}">
                   <div class="d-flex">
                     <div class="icon h-10 me-3 d-flex mt-1">
                       <i class="ni ni-notification-70 text-gradient text-primary"></i>
@@ -259,19 +259,19 @@
                   </div>
                 </a>
                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:alerts' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:alerts' %}">
                     Alerts
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:modals' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:modals' %}">
                     Modals
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:tooltips' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:tooltips' %}">
                     Tooltips & Popovers
                   </a>
                 </div>
               </li>
               <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'taxi:presentation' %}">
+                <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'rent:presentation' %}">
                   <div class="d-flex">
                     <div class="icon h-10 me-3 d-flex mt-1">
                       <i class="ni ni-app text-gradient text-primary"></i>
@@ -286,25 +286,25 @@
                   </div>
                 </a>
                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:avatars' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:avatars' %}">
                     Avatars
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:badges' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:badges' %}">
                     Badges
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:breadcrumbs' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:breadcrumbs' %}">
                     Breadcrumbs
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:buttons' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:buttons' %}">
                     Buttons
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:dropdowns' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:dropdowns' %}">
                     Dropdowns
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:progress_bars' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:progress_bars' %}">
                     Progress Bars
                   </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:toggles' %}">
+                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'rent:toggles' %}">
                     Toggles
                   </a>
                   <a class="dropdown-item ps-3 border-radius-md mb-1" href="{% url 'taxi:typography' %}">

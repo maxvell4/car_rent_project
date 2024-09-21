@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Car list <a style="float: right" href="{% url "taxi:car-create" %}">+</a></h1>
+  <h1>Car list <a style="float: right" href="{% url "rent:car-create" %}">+</a></h1>
 
   {% if car_list %}
     <table class="table">
@@ -20,16 +20,16 @@
             {{ car.model }}
           </td>
           <td>
-            <a href="{% url "taxi:car-update" pk=car.id %}" class="btn btn-primary">UPDATE</a>
+            <a href="{% url "rent:car-update" pk=car.id %}" class="btn btn-primary">UPDATE</a>
           </td>
           <td>
-            <a href="{% url "taxi:car-delete" pk=car.id %}" class="btn btn-danger">DELETE</a>
+            <a href="{% url "rent:car-delete" pk=car.id %}" class="btn btn-danger">DELETE</a>
           </td>
         </tr>
       {% endfor %}
     </table>
 
   {% else %}
-    <p>There are no cars in taxi</p>
+    <p>There are no cars in rent</p>
   {% endif %}
 {% endblock %}

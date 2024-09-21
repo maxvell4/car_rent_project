@@ -1,24 +1,26 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-
-from . import views
-from .views import (
-    index,
-    about_us,
-    contact_us,
-)
+from rent import views
+from rent.views import (IndexView,
+                        AboutUsView,
+                        ContactUsView,
+                        RentCarView,
+                        CarPhotoView,
+                        SuccessView,
+                        RegisterView)
 
 urlpatterns = [
-    path("", index, name="index"),
-    path('about-us/', about_us, name='about-us'),
-    path('contact-us/', contact_us, name='contact-us'),
-    path('rent-car/<int:car_id>/', views.rent_car, name='rent_car'),
-    path('success/', views.success, name='success'),
-    path('car/<int:car_id>/', views.car_photo, name='car_detail'),
+    path('', IndexView.as_view(), name='index'),
+    path('about/', AboutUsView.as_view(), name='about_us'),
+    path('contact/', ContactUsView.as_view(), name='contact_us'),
+    path('rent/<int:car_id>/', RentCarView.as_view(), name='rent_car'),
+    path('car_photo/<int:car_id>/', CarPhotoView.as_view(), name='car_detail'),
+    path('success/', SuccessView.as_view(), name='success'),
+
 
     # Authentication
     path('accounts/login/', views.UserLoginView.as_view(), name='login'),
-    path('accounts/register/', views.register, name='register'),
+    path('accounts/register/', RegisterView.as_view(), name='register'),
     path('accounts/logout/', views.logout_view, name='logout'),
     path('accounts/password-change/', views.UserPasswordChangeView.as_view(), name='password_change'),
     path('accounts/password-change-done/', auth_views.PasswordChangeDoneView.as_view(
@@ -35,4 +37,4 @@ urlpatterns = [
     ), name='password_reset_complete'),
 ]
 
-app_name = "taxi"
+app_name = "rent"

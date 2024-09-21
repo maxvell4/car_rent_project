@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from taxi.models import Car, Manufacturer
+from rent.models import Car, Manufacturer
 
 
 class CarTest(TestCase):
@@ -22,7 +22,7 @@ class CarTest(TestCase):
 
     def test_create_car(self):
         response = self.client.post(
-            reverse("taxi:car-create"),
+            reverse("rent:car-create"),
             {
                 "model": "Continental",
                 "manufacturer": self.manufacturer.id,
@@ -40,7 +40,7 @@ class CarTest(TestCase):
             manufacturer=self.manufacturer,
         )
         response = self.client.post(
-            reverse("taxi:car-update", kwargs={"pk": car.id}),
+            reverse("rent:car-update", kwargs={"pk": car.id}),
             {
                 "pk": car.id,
                 "model": "Not Continental",
@@ -58,7 +58,7 @@ class CarTest(TestCase):
             manufacturer=self.manufacturer,
         )
         response = self.client.post(
-            reverse("taxi:car-delete", kwargs={"pk": car.id})
+            reverse("rent:car-delete", kwargs={"pk": car.id})
         )
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Car.objects.filter(id=car.id).exists())
@@ -78,7 +78,7 @@ class ManufacturerTest(TestCase):
     def test_create_manufacturer(self):
         response = self.client.post(
             reverse(
-                "taxi:manufacturer-create",
+                "rent:manufacturer-create",
             ),
             {"name": "Lincoln", "country": "USA"},
         )
@@ -92,7 +92,7 @@ class ManufacturerTest(TestCase):
         )
         response = self.client.post(
             reverse(
-                "taxi:manufacturer-update", kwargs={"pk": manufacturer.id}
+                "rent:manufacturer-update", kwargs={"pk": manufacturer.id}
             ),
             {"name": "Not Lincoln", "country": "USA"},
         )
@@ -108,7 +108,7 @@ class ManufacturerTest(TestCase):
             country="USA",
         )
         response = self.client.post(
-            reverse("taxi:manufacturer-delete", kwargs={"pk": manufacturer.id})
+            reverse("rent:manufacturer-delete", kwargs={"pk": manufacturer.id})
         )
         self.assertEqual(response.status_code, 302)
         self.assertFalse(
