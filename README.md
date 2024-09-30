@@ -6,7 +6,7 @@ Django project for rent car
 
 ## Installation
 
-Python3 must be already instaled
+Python3 must be already installed
 
 ```shell
 git clone https://github.com/maxvell4/car_rent_project
