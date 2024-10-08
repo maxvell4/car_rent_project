@@ -1,0 +1,55 @@
+{% extends 'layouts/base_sections.html' %}
+{% load static %}
+
+{% block title %} Best rent car {% endblock title %}
+
+{% block body %} class="about-us" {% endblock body %}
+
+
+{% block content %}
+
+  <!-- -------- START HEADER 7 w/ text and video ------- -->
+  <header class="bg-gradient-light">
+    <div class="page-header min-vh-75" style="background-image: url('{{ car.image.url }}');">
+      <span class="mask bg-gradient-info opacity-2"></span>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mx-auto my-auto">
+<div class="container mt-4">
+    <div id="carCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            {% for image in inside_images %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ image.image_inside.url }}" class="d-block w-100" alt="Interior Photo">
+            </div>
+            {% empty %}
+            <p>No images available</p>
+            {% endfor %}
+        </div>
+      </>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+            <div class="d-flex justify-content-center">
+              <a href="javascript:;"><i class="fab fa-facebook text-lg text-white me-4"></i></a>
+              <a href="javascript:;"><i class="fab fa-instagram text-lg text-white me-4"></i></a>
+              <a href="javascript:;"><i class="fab fa-twitter text-lg text-white me-4"></i></a>
+              <a href="javascript:;"><i class="fab fa-google-plus text-lg text-white"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+       </header>
+{% endblock content %}
