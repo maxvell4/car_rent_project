@@ -2,7 +2,10 @@
 
 Django project for rent car
 
-[Library project deployed to Reneder] ()
+Admin login: admin
+Admin password: admin
+
+[Library project deployed to Reneder] (https://car-rent-project-cals.onrender.com)
 
 ## Installation
 
